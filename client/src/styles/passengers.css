@@ -1,0 +1,511 @@
+body {
+  padding-top: 100px;
+}
+
+#passenger {
+  padding-bottom: 100px;
+  margin: 0 auto;
+  width: calc(min(1050px, 90%));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.breadcrums {
+  align-self: flex-start;
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: white;
+  border-radius: 5px;
+  margin-bottom: 40px;
+}
+
+.breadcrums span {
+  cursor: pointer;
+  font-family: Open Sans;
+  margin: 0 5px;
+  color: #9d9d9d;
+  font-weight: 300;
+}
+
+.breadcrums span:hover {
+  color: #525252;
+}
+
+.global-form {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.form-card,
+.recepit {
+  margin-bottom: 28px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+}
+
+.form-card h2 {
+  margin: 0;
+  font-family: Lora;
+  font-size: 2em;
+  font-weight: 400;
+}
+
+.form-card p {
+  position: relative;
+  font-family: Open Sans;
+  font-weight: 300;
+  color: #505050;
+  font-size: 1em;
+  margin-bottom: 30px;
+}
+
+.form-card p::before {
+  content: "";
+  position: absolute;
+  left: -20px;
+  height: 100%;
+  width: 4px;
+  background-color: var(--cone, orangered);
+}
+
+.form-col1 {
+  width: 62%;
+}
+
+.form-col2 {
+  width: 35%;
+}
+
+span.active-bread {
+  color: black;
+  font-weight: 400;
+}
+
+.d-group {
+  justify-content: space-between;
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.inp-group {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+}
+
+.inp-group > label {
+  font-family: Open Sans;
+  font-weight: 300;
+  color: #505050;
+  font-size: 0.9em;
+  margin-bottom: 5px;
+}
+
+.inp-group > :is(input, select) {
+  font-family: Open Sans;
+  font-size: 1em;
+  font-weight: 300;
+  padding: 12px 12px;
+  border: 1px solid #cdcdcd;
+  border-radius: 8px;
+  outline: none;
+}
+
+.inp-group > :is(input, select):focus {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.seat-place {
+  font-family: Open Sans;
+  font-size: 1em;
+  font-weight: 300;
+  color: var(--cone, orangered);
+  position: relative;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 12px 12px;
+  border: 2px solid var(--cone, orangered);
+}
+
+.seat-place img {
+  position: absolute;
+  left: 10px;
+}
+
+.recepit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.recepit h2 {
+  align-self: flex-start;
+  margin: 0;
+  font-family: Lora;
+  font-size: 2em;
+  font-weight: 400;
+}
+
+.divider {
+  width: 95%;
+  height: 1px;
+  background-color: #d4d4d4;
+  margin: 20px 0;
+}
+
+.row1,
+.row2 {
+  display: flex;
+}
+
+.time {
+  margin-right: 10px;
+}
+
+.time > span:first-child {
+  font-family: Lora;
+  font-size: 1.25em;
+  font-weight: 400;
+}
+
+.time > span:last-child {
+  font-family: Open Sans;
+  color: #9d9d9d;
+  font-size: 0.85em;
+  font-weight: 300;
+}
+
+.marker {
+  background-color: white;
+  position: relative;
+  margin-top: 4px;
+}
+
+.row1 .marker::before {
+  content: "";
+  height: 100%;
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px dashed #cfcfcf;
+}
+
+.marker > div {
+  height: 15px;
+  width: 15px;
+  border-radius: 100%;
+  border: 2px solid var(--cone, oreangered);
+}
+
+.place {
+  font-family: Open Sans;
+  font-weight: 300;
+  margin-left: 15px;
+}
+
+.place h4 {
+  font-weight: 400;
+  margin: 0;
+}
+
+.place p {
+  margin-top: 0;
+  color: #9d9d9d;
+}
+
+.total1 {
+  font-family: Open Sans;
+  font-weight: 300;
+  font-size: 1.25em;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.total1 div:last-child {
+  font-family: Lora;
+  font-weight: 400;
+}
+
+.total2 {
+  font-family: Open Sans;
+  font-weight: 300;
+  font-size: 1.25em;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.total2 span {
+  color: #505050;
+}
+
+.total2 span:last-child {
+  text-align: right;
+  font-size: 1.5em;
+  color: black;
+  font-family: Lora;
+  font-weight: 400;
+}
+
+.total2 span b {
+  color: black;
+  font-weight: 300;
+  font-size: 1.5em;
+}
+
+.return-ticket {
+  align-self: flex-start;
+}
+
+.return-ticket a {
+  font-family: Open Sans;
+  font-weight: 300;
+  font-weight: 1.5em;
+  text-decoration: none;
+  color: var(--cone, orangered);
+}
+
+.recepit {
+  position: sticky;
+  top: 20px;
+}
+
+.form-card .header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.security {
+  display: flex;
+  align-items: flex-start;
+}
+
+.payment-icons {
+  display: flex;
+}
+
+.payment-icons img {
+  margin-right: 15px;
+}
+
+p.sec-text {
+  margin: 0;
+  margin-right: 15px;
+  font-size: 0.85em;
+}
+
+.sec-text::before {
+  display: none;
+}
+
+.d-group.col {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.d-group.col .inp-group {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.d-group.col .inp-group input {
+  width: 15px;
+  height: 15px;
+}
+
+.d-group.col .inp-group label {
+  font-weight: 400;
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+
+.d-group.col .inp-group label b {
+  font-weight: 400;
+  text-decoration: underline;
+  color: var(--cone, orangered);
+}
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  border-radius: 6px;
+  box-shadow: 0 0 0 1px #c5c5c5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.container:hover input:checked ~ .checkmark {
+  background-color: hsl(19, 100%, 55%);
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  box-shadow: none;
+  background-color: var(--cone, orangered);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+.btn-group {
+  width: 100%;
+}
+
+.btn-group input {
+  border: none;
+  cursor: pointer;
+  background-color: var(--cone, orangered);
+  border-radius: 6px;
+  color: white;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+  font-weight: 300;
+  font-family: Open Sans;
+  padding: 16px 0;
+  width: 100%;
+}
+
+.btn-group input:hover {
+  background-color: hsl(19, 100%, 55%);
+}
+
+.sec-sub-info {
+  justify-content: center;
+  display: flex;
+}
+
+.sec-sub-info p {
+  margin: 0;
+  margin-left: 10px;
+  font-size: 0.9em;
+  color: #505050;
+  font-weight: 300;
+  font-family: Open Sans;
+}
+
+.sec-sub-info img {
+  width: 20px;
+}
+
+@media screen and (max-width: 710px) {
+  .global-form {
+    flex-direction: column-reverse;
+  }
+
+  .form-col1,
+  .form-col2 {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .breadcrums {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .breadcrums {
+    display: none;
+  }
+
+  .d-group {
+    margin-bottom: 0;
+    flex-direction: column;
+  }
+
+  .inp-group {
+    margin-bottom: 16px;
+    width: 100%;
+  }
+
+  .security {
+    flex-direction: column;
+  }
+
+  .form-card .header h2:last-child {
+    text-align: right;
+  }
+
+  .btn-group {
+    flex-direction: column;
+  }
+
+  .total2 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .total2 span:first-child {
+    margin-bottom: 20px;
+  }
+
+  .header {
+    flex-direction: column;
+  }
+
+  .form-card .header h2:last-child {
+    text-align: left;
+  }
+}

@@ -1,44 +1,388 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="./favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="./logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BusRiver</title>
+    <script defer type="module" src="../src/entries/index.tsx"></script>
     <link rel="manifest" href="./manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-    <script defer type="module" src="../src/index.tsx"></script>
+    <link
+      rel="shortcut icon"
+      href="../src/assets/images/vector/logo_bright.svg"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../src/styles/main.css" />
+    <link rel="stylesheet" href="../src/styles/header.css" />
+    <link rel="stylesheet" href="../src/styles/index.css" />
+    <link rel="stylesheet" href="../src/styles/footer.css" />
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <input type="checkbox" name="mobile-nav" id="mobile-nav" />
+    <nav>
+      <label for="mobile-nav" class="mobile-label">
+        <div><span></span></div>
+      </label>
+      <a href="./index.html" class="nav-logo">
+        <svg
+          class="nav-logo-img"
+          width="42"
+          height="42"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M3.431 0h35.535c1.484.184 2.763 1.347 2.798 2.898v5.769c-4.559-.083-9.12-.011-13.68-.038-1.335-.038-2.781.305-3.688 1.36-2.062 2.3-4.059 4.66-6.117 6.965-1.691.048-3.385-.04-5.077.045-1.158.03-2.26.59-3.016 1.463-2.39 2.726-4.76 5.47-7.147 8.195-.923 1.048-1.794 2.142-2.803 3.11V2.817c.129-.648.311-1.314.777-1.81C1.588.279 2.572.128 3.43 0z"
+            fill="#2E3D91"
+          />
+          <path
+            d="M26.856 14.124c.959-1.043 2.47-1.239 3.814-1.182 3.696.07 7.403-.109 11.094.094v3.912c-5.75-.047-11.5.015-17.25-.03.809-.906 1.531-1.887 2.342-2.794zM13.99 21.786c.816-.51 1.798-.68 2.75-.658 8.342.024 16.684-.022 25.024.021v4.052c-7.312-.072-14.624 0-21.937-.037-1.45-.032-3.022.36-4.004 1.498a466.67 466.67 0 01-2.888 3.217c9.608.04 19.22-.021 28.83.021v9.497c-.229 1.295-1.23 2.43-2.57 2.603H2.535C1.168 41.698.231 40.417.236 39.032v-1.959c3.678-4.195 7.356-8.393 11.03-12.593.852-.946 1.629-2.007 2.723-2.694z"
+            fill="#2E3D91"
+          />
+        </svg>
+        <span class="nav-logo-text">BusRiver</span>
+      </a>
+      <div class="nav-menu">
+        <div href="" class="menu-logo">
+          <svg
+            class="nav-logo-img"
+            width="42"
+            height="42"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3.431 0h35.535c1.484.184 2.763 1.347 2.798 2.898v5.769c-4.559-.083-9.12-.011-13.68-.038-1.335-.038-2.781.305-3.688 1.36-2.062 2.3-4.059 4.66-6.117 6.965-1.691.048-3.385-.04-5.077.045-1.158.03-2.26.59-3.016 1.463-2.39 2.726-4.76 5.47-7.147 8.195-.923 1.048-1.794 2.142-2.803 3.11V2.817c.129-.648.311-1.314.777-1.81C1.588.279 2.572.128 3.43 0z"
+              fill="#2E3D91"
+            />
+            <path
+              d="M26.856 14.124c.959-1.043 2.47-1.239 3.814-1.182 3.696.07 7.403-.109 11.094.094v3.912c-5.75-.047-11.5.015-17.25-.03.809-.906 1.531-1.887 2.342-2.794zM13.99 21.786c.816-.51 1.798-.68 2.75-.658 8.342.024 16.684-.022 25.024.021v4.052c-7.312-.072-14.624 0-21.937-.037-1.45-.032-3.022.36-4.004 1.498a466.67 466.67 0 01-2.888 3.217c9.608.04 19.22-.021 28.83.021v9.497c-.229 1.295-1.23 2.43-2.57 2.603H2.535C1.168 41.698.231 40.417.236 39.032v-1.959c3.678-4.195 7.356-8.393 11.03-12.593.852-.946 1.629-2.007 2.723-2.694z"
+              fill="#2E3D91"
+            />
+          </svg>
+          <span class="nav-logo-text">BusRiver</span>
+        </div>
+        <a href="" class="nav-menu-item">Билеты</a>
+        <a href="" class="nav-menu-item">Направления</a>
+        <a href="" class="nav-menu-item">Расписание</a>
+        <a href="" class="nav-menu-item">О нас</a>
+        <label for="mobile-nav" class="mobile-label-close">
+          <div><span></span></div>
+        </label>
+      </div>
+    </nav>
+    <main>
+      <section id="jumbo">
+        <div class="jumbo-header">
+          <h1>Let's Drive</h1>
+          <p>Билеты на автобус по России, Беларуси и Европе</p>
+        </div>
+        <div id="search-form"></div>
+        <img src="../src/assets/images/vector/bus-min.svg" alt="" />
+      </section>
+      <section id="advantages">
+        <div class="advantages-cont">
+          <div class="advantages-group">
+            <div class="advantages-item">
+              <img src="../src/assets/images/vector/icons/clock.svg" alt="" />
+              <h2>Покупка онлайн</h2>
+              <p>Билеты онлайн в любое время на сайте и в приложении</p>
+            </div>
+            <div class="advantages-item">
+              <img src="../src/assets/images/vector/icons/road.svg" alt="" />
+              <h2>50 000 направлений</h2>
+              <p>Рейтинг рейсов перевозчиков по отзывам пассажиров</p>
+            </div>
+          </div>
+          <div class="advantages-group">
+            <div class="advantages-item">
+              <img src="../src/assets/images/vector/icons/card.svg" alt="" />
+              <h2>Безопасная оплата</h2>
+              <p>Стандарты безопасности PCI DSS для защиты платежных данных</p>
+            </div>
+            <div class="advantages-item">
+              <img
+                src="../src/assets/images/vector/icons/return_ticket.svg"
+                alt=""
+              />
+              <h2>Возврат билетов</h2>
+              <p>Быстрое оформление возврата в личном кабинете</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="guide">
+        <div class="guide-card">
+          <h2 class="guide-header">Как купить билет на автобус на BusRiver</h2>
+          <div class="guide-content">
+            <div class="guide-group">
+              <div class="guide-item">
+                <h3 class="guide-item-header">Найдите междугородние рейсы</h3>
+                <p class="guide-item-text">
+                  Укажите направление и дату поездки в строке поиска и нажмите
+                  «Найти» — вы увидите актуальное расписание и стоимость
+                  билетов.
+                </p>
+              </div>
+              <img src="../src/assets/images/vector/icons/arrow.svg" alt="" />
+              <div class="guide-item">
+                <h3 class="guide-item-header">Выберите подходящий вариант</h3>
+                <p class="guide-item-text">
+                  Чтобы купить дешевые автобусные билеты онлайн, используйте
+                  фильтр по цене.
+                </p>
+              </div>
+              <img src="../src/assets/images/vector/icons/arrow.svg" alt="" />
+            </div>
+            <div class="guide-group">
+              <div class="guide-item">
+                <h3 class="guide-item-header">Забронируйте билеты</h3>
+                <p class="guide-item-text">
+                  Укажите паспортные данные: свои и других пассажиров, с
+                  которыми вы путешествуете.
+                </p>
+              </div>
+              <img src="../src/assets/images/vector/icons/arrow.svg" alt="" />
+              <div class="guide-item">
+                <h3 class="guide-item-header">
+                  Оплатите заказ банковской картой
+                </h3>
+                <p class="guide-item-text">
+                  После оплаты скачайте билет в личном кабинете на странице
+                  «Ваши билеты». Распечатайте билет, чтобы предъявить его при
+                  посадке в автобус.
+                </p>
+              </div>
+              <div style="width: 30px"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="popular">
+        <div class="popular-head">
+          <h2 class="popular-header">Популярные направления из:</h2>
+          <div class="pop-inp-group">
+            <div class="popular-inp">
+              <span class="popular-inp-hint">Город отправления</span><br />
+              <input
+                placeholder="Краснодар"
+                type="text"
+                list="go"
+                name=""
+                id=""
+              />
+              <datalist id="go">
+                <option value="Москва">Московская обл.</option>
+                <option value="Домодедово">Московская обл.</option>
+                <option value="Белгород">Белгородская обл.</option>
+                <option value="Беленихино">Белгородская обл.</option>
+                <option value="Красноярск">Красноярская обл.</option>
+                <option value="Краснодар">Краснодарская обл.</option>
+              </datalist>
+            </div>
+            <div class="popular-inp">
+              <span class="popular-inp-hint">Дата поездки</span><br />
+              <div>
+                <input placeholder="5 июня" type="text" name="" id="" />
+                <img
+                  src="../src/assets/images/vector/icons/calendar.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="popular-body">
+          <div class="pop-group">
+            <div class="popular-card-big">
+              <img src="../src/assets/images/moscow.jpg" alt="" />
+              <p class="pop-item-dir">Краснодар -> Москва</p>
+              <p class="pop-item-price">Цена от <b>2000руб</b></p>
+            </div>
+            <div class="popular-card-small">
+              <p class="pop-item-dir">
+                Краснодар <br />
+                Москва
+              </p>
+              <p class="pop-item-price">Цена от <br /><b>2000руб</b></p>
+            </div>
+            <div class="popular-card-small">
+              <p class="pop-item-dir">
+                Краснодар<br />
+                Москва
+              </p>
+              <p class="pop-item-price">Цена от <br /><b>2000руб</b></p>
+            </div>
+          </div>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+          <div class="pop-group">
+            <div class="popular-card-big">
+              <img src="../src/assets/images/moscow.jpg" alt="" />
+              <p class="pop-item-dir">Краснодар -> Москва</p>
+              <p class="pop-item-price">Цена от <b>2000руб</b></p>
+            </div>
+            <div class="popular-card-small">
+              <p class="pop-item-dir">Краснодар <br />Москва</p>
+              <p class="pop-item-price">
+                Цена от<br />
+                <b>2000руб</b>
+              </p>
+            </div>
+            <div class="popular-card-small">
+              <p class="pop-item-dir">
+                Краснодар<br />
+                Москва
+              </p>
+              <p class="pop-item-price">Цена от <br /><b>2000руб</b></p>
+            </div>
+          </div>
+          <div class="pop-group">
+            <div class="popular-card-big">
+              <img src="../src/assets/images/moscow.jpg" alt="" />
+              <p class="pop-item-dir">Краснодар -> Москва</p>
+              <p class="pop-item-price">Цена от <b>2000руб</b></p>
+            </div>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+            <div class="popular-card-small">
+              <p class="pop-item-dir">Краснодар <br />Москва</p>
+              <p class="pop-item-price">Цена от <br /><b>2000руб</b></p>
+            </div>
+            <div class="popular-card-small">
+              <p class="pop-item-dir">
+                Краснодар<br />
+                Москва
+              </p>
+              <p class="pop-item-price">Цена от <br /><b>2000руб</b></p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="reviews">
+        <div class="reviews-card">
+          <h2 class="reviews-header">Отзывы о BusRiver</h2>
+          <div class="reviews-content">
+            <div class="review-item">
+              <p class="review-text">
+                Очень понравилось — все понятно, доступно и оперативно.
+              </p>
+              <div class="rating">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <p class="author">Ирина Волкова</p>
+            </div>
+            <div class="review-item">
+              <p class="review-text">
+                Сделано для удобства, для людей, все нравится, спасибо.
+              </p>
+              <div class="rating">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <p class="author">Елена</p>
+            </div>
+            <div class="review-item">
+              <p class="review-text">
+                Благодарим за качественную работу и желаем добра и процветания!
+              </p>
+              <div class="rating">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div class="nope"></div>
+              </div>
+              <p class="author">Елена Кандакова</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="mail">
+        <div class="mail-cont">
+          <div class="mail-head">
+            <img src="../src/assets/images/vector/icons/mail.svg" alt="" />
+            <div class="mail-text">
+              <h2>Скидки для подписчиков</h2>
+              <p>
+                Закрытые распродажи для подписчиков и идеи бюджетных путешествий
+              </p>
+            </div>
+          </div>
+          <form class="mail-body">
+            <input type="email" placeholder="E-mail" name="" id="" />
+            <input type="submit" value="Подписаться" />
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="foo-line"></div>
+      <div class="foo-cont">
+        <div class="foo-nav">
+          <div class="foo-nav-block">
+            <h3 class="blk-header">ИНФОРМАЦИЯ</h3>
+            <div class="blk-items-group">
+              <a href="" class="blk-item">О нас</a>
+              <a href="" class="blk-item">Вопросы и ответы</a>
+              <a href="" class="blk-item">Вернуть билет</a>
+              <a href="" class="blk-item">Контакты</a>
+            </div>
+          </div>
+          <div class="foo-nav-block">
+            <h3 class="blk-header">ПАРТНЕРАМ</h3>
+            <div class="blk-items-group">
+              <a href="" class="blk-item">Перевозчикам</a>
+              <a href="" class="blk-item">Агентам</a>
+              <a href="" class="blk-item"
+                >Автобусные <br />
+                перевозчики</a
+              >
+            </div>
+          </div>
+          <div class="foo-nav-block">
+            <h3 class="blk-header">ДОКУМЕНТЫ</h3>
+            <div class="blk-items-group">
+              <a href="" class="blk-item">Договор оферты</a>
+              <a href="" class="blk-item"
+                >Политика<br />
+                конфиденциальности</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="foo-us">
+          <h3 class="foo-us-header">МЫ В СОЦСЕТЯХ</h3>
+          <div class="foo-us-icon-group">
+            <img
+              class="foo-us-icon"
+              src="../src/assets/images/vector/social/facebook.svg"
+              alt=""
+            />
+            <img
+              class="foo-us-icon"
+              src="../src/assets/images/vector/social/vk.svg"
+              alt=""
+            />
+            <img
+              class="foo-us-icon"
+              src="../src/assets/images/vector/social/twitter.svg"
+              alt=""
+            />
+            <img
+              class="foo-us-icon"
+              src="../src/assets/images/vector/social/telegram.svg"
+              alt=""
+            />
+          </div>
+          <p class="foo-us-copyright">&copy;2009 - 2021 BusRiver</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
