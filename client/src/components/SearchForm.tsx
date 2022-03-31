@@ -1,6 +1,17 @@
-import '../styles/search.css'
+import { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
-export default function SearchForm() {
+import '../styles/search.css';
+
+interface SearchFormProps {
+  from?: string | undefined;
+  to?: string | undefined;
+  date?: string | undefined;
+  pass?: number | undefined;
+}
+
+export default function SearchForm(props: SearchFormProps) {
+ 
   return (
     <>
       <div className="jumbo-search-form">
@@ -15,6 +26,7 @@ export default function SearchForm() {
                   type="text"
                   list="from"
                   name="from"
+                  value={props.from}
                   id=""
                 />
                 <datalist id="from">
@@ -34,6 +46,7 @@ export default function SearchForm() {
                   type="text"
                   list="to"
                   name="to"
+                  value={props.to}
                   id=""
                 />
                 <datalist id="to">
@@ -51,22 +64,28 @@ export default function SearchForm() {
                 <span className="search-inp-hint">Дата поездки</span>
                 <br />
                 <div>
-                  <input placeholder="5 июня" type="text" name="date" id="" />
-                  <img
-                    src="images/vector/icons/calendar.svg"
-                    alt=""
+                  <input
+                    placeholder="5 июня"
+                    type="text"
+                    name="date"
+                    value={props.date}
+                    id=""
                   />
+                  <img src="images/vector/icons/calendar.svg" alt="" />
                 </div>
               </div>
               <div className="search-inp">
                 <span className="search-inp-hint">Пассажиры</span>
                 <br />
                 <div>
-                  <input placeholder="1 взрослый" type="text" name="pass" id="" />
-                  <img
-                    src="images/vector/icons/bi_person.svg"
-                    alt=""
+                  <input
+                    placeholder="1 взрослый"
+                    type="text"
+                    name="pass"
+                    value={props.pass}
+                    id=""
                   />
+                  <img src="images/vector/icons/bi_person.svg" alt="" />
                 </div>
               </div>
             </div>

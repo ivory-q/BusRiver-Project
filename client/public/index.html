@@ -77,7 +77,81 @@
           <h1>Let's Drive</h1>
           <p>Билеты на автобус по России, Беларуси и Европе</p>
         </div>
-        <div id="search-form"></div>
+        <div class="jumbo-search-form">
+          <form action="/search" method="get">
+            <div class="search-inp-group">
+              <div class="search-inp-sub">
+                <div class="search-inp">
+                  <span class="search-inp-hint">Откуда</span>
+                  <br />
+                  <input
+                    placeholder="Москва"
+                    type="text"
+                    list="from"
+                    name="from"
+                    id=""
+                  />
+                  <datalist id="from">
+                    <option value="Москва">Московская обл.</option>
+                    <option value="Домодедово">Московская обл.</option>
+                    <option value="Белгород">Белгородская обл.</option>
+                    <option value="Беленихино">Белгородская обл.</option>
+                    <option value="Красноярск">Красноярская обл.</option>
+                    <option value="Краснодар">Краснодарская обл.</option>
+                  </datalist>
+                </div>
+                <div class="search-inp">
+                  <span class="search-inp-hint">Куда</span>
+                  <br />
+                  <input
+                    placeholder="Краснодар"
+                    type="text"
+                    list="to"
+                    name="to"
+                    id=""
+                  />
+                  <datalist id="to">
+                    <option value="Москва">Московская обл.</option>
+                    <option value="Домодедово">Московская обл.</option>
+                    <option value="Белгород">Белгородская обл.</option>
+                    <option value="Беленихино">Белгородская обл.</option>
+                    <option value="Красноярск">Красноярская обл.</option>
+                    <option value="Краснодар">Краснодарская обл.</option>
+                  </datalist>
+                </div>
+              </div>
+              <div class="search-inp-sub">
+                <div class="search-inp">
+                  <span class="search-inp-hint">Дата поездки</span>
+                  <br />
+                  <div>
+                    <input
+                      placeholder="5 июня"
+                      type="text"
+                      name="date"
+                      id=""
+                    />
+                    <img src="../src/assets/images/vector/icons/calendar.svg" alt="" />
+                  </div>
+                </div>
+                <div class="search-inp">
+                  <span class="search-inp-hint">Пассажиры</span>
+                  <br />
+                  <div>
+                    <input
+                      placeholder="1 взрослый"
+                      type="text"
+                      name="pass"
+                      id=""
+                    />
+                    <img src="../src/assets/images/vector/icons/bi_person.svg" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <input type="submit" value="Найти билет" />
+          </form>
+        </div>
         <img src="../src/assets/images/vector/bus-min.svg" alt="" />
       </section>
       <section id="advantages">
