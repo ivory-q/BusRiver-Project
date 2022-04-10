@@ -1,4 +1,3 @@
-import { In } from 'typeorm';
 import { Route } from '../models/Route';
 import { Reservation } from '../models/Reservation';
 
@@ -16,6 +15,24 @@ export class ReservationService {
       reservations = await Reservation.find({ relations: { route: true } });
     }
     return reservations;
+  };
+
+  public seats = async (routeId: number) => {
+    const reservation = await Reservation.find({
+      select: { seat: true },
+      relations: { route: true },
+    });
+    let occupied = reservation.filter((reserv) => {
+      let route = reserv.route;
+      if (route?.id == routeId) {
+        return reserv.seat;
+      }
+    });
+    let occSeats = occupied.map((elem: Reservation) => {
+      return elem.seat;
+    });
+
+    return occSeats;
   };
 
   public create = async (reservation: Reservation, routeId: number) => {

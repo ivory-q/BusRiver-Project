@@ -1,7 +1,7 @@
 import { Router, Request, Response } from 'express';
 import path from 'path';
 
-export default class SearchController {
+export default class ReactRouterController {
   public router: Router;
 
   constructor() {
@@ -14,7 +14,7 @@ export default class SearchController {
    */
   public index = async (_req: Request, _res: Response) => {
     _res.sendFile(
-      path.resolve(__dirname, '../client/dist', 'interactive.html')
+      path.resolve(__dirname, '../../client/dist', 'interactive.html')
     );
   };
 

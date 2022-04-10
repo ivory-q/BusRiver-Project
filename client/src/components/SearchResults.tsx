@@ -1,27 +1,25 @@
 import RouteCard from './RouteCard';
 
 import { SearchResult } from '../types/SearchResult';
+import { SearchResultsState } from '../types/SearchResult';
+import { Route } from '../types/Route';
 
-interface SearchResultsState {
-  loading: boolean,
-  error: string | null,
-  items: JSON[]
-}
-
-export default function SearchResults(props: SearchResult[]) {
-  return (
-    <>
-      {props.forEach((result) => {
-        <RouteCard
-          badge={result.badge}
-          from={result.from}
-          to={result.to}
-          date={result.date}
-          time={result.time}
-          price={result.price}
-          car={result.car}
-        />;
-      })}
-    </>
-  );
+export default function SearchResults(props: SearchResultsState) {
+  if (!props.isLoaded) {
+    return <h1>No results</h1>;
+  } else {
+    return (
+      <div className="search-cards">
+        {props.items?.map((result: Route, index) => {
+          
+          return (
+            <RouteCard
+              key={index}
+              route={result}
+            />
+          );
+        })}
+      </div>
+    );
+  }
 }

@@ -1,8 +1,5 @@
-body {
+#result {
   padding-top: 100px;
-}
-
-#passenger {
   padding-bottom: 100px;
   margin: 0 auto;
   width: calc(min(1050px, 90%));
@@ -12,7 +9,7 @@ body {
   align-items: center;
 }
 
-.breadcrums {
+#result .breadcrums {
   align-self: flex-start;
   display: inline-block;
   padding: 12px 24px;
@@ -21,7 +18,7 @@ body {
   margin-bottom: 40px;
 }
 
-.breadcrums span {
+#result .breadcrums span {
   cursor: pointer;
   font-family: Open Sans;
   margin: 0 5px;
@@ -29,17 +26,17 @@ body {
   font-weight: 300;
 }
 
-.breadcrums span:hover {
+#result .breadcrums span:hover {
   color: #525252;
 }
 
-.global-form {
+#result .global-form {
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
 
-.form-card {
+#result .form-card {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,19 +48,19 @@ body {
   border-radius: 8px;
 }
 
-.form-card .header {
+#result .form-card .header {
   display: flex;
   flex-direction: column;
 }
 
-.form-card h2 {
+#result .form-card h2 {
   margin: 0;
   font-family: Lora;
   font-size: 2em;
   font-weight: 400;
 }
 
-.form-card .header p {
+#result .form-card .header p {
   position: relative;
   font-family: Open Sans;
   font-weight: 300;
@@ -73,8 +70,8 @@ body {
   margin-bottom: 30px;
 }
 
-.form-card .header p::before {
-  content: "";
+#result .form-card .header p::before {
+  content: '';
   position: absolute;
   left: -40px;
   height: 100%;
@@ -82,19 +79,19 @@ body {
   background-color: var(--cone, orangered);
 }
 
-.form-col1 {
+#result .form-col1 {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
 }
 
-span.active-bread {
+#result span.active-bread {
   color: black;
   font-weight: 400;
 }
 
-.inp-group > :is(input, select) {
+#result .inp-group > :is(input, select) {
   font-family: Open Sans;
   font-size: 1em;
   font-weight: 300;
@@ -104,40 +101,40 @@ span.active-bread {
   outline: none;
 }
 
-.inp-group > :is(input, select):focus {
+#result .inp-group > :is(input, select):focus {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
 }
 
-.row1,
-.row2 {
+#result .row1,
+#result .row2 {
   display: flex;
 }
 
-.time {
+#result .time {
   margin-right: 10px;
 }
 
-.time > span:first-child {
+#result .time > span:first-child {
   font-family: Lora;
   font-size: 1.25em;
   font-weight: 400;
 }
 
-.time > span:last-child {
+#result .time > span:last-child {
   font-family: Open Sans;
   color: #9d9d9d;
   font-size: 0.85em;
   font-weight: 300;
 }
 
-.marker {
+#result .marker {
   background-color: white;
   position: relative;
   margin-top: 4px;
 }
 
-.row1 .marker::before {
-  content: "";
+#result .row1 .marker::before {
+  content: '';
   height: 100%;
   position: absolute;
   top: 15px;
@@ -146,30 +143,30 @@ span.active-bread {
   border: 1px dashed #cfcfcf;
 }
 
-.marker > div {
+#result .marker > div {
   height: 15px;
   width: 15px;
   border-radius: 100%;
   border: 2px solid var(--cone, oreangered);
 }
 
-.place {
+#result .place {
   font-family: Open Sans;
   font-weight: 300;
   margin-left: 15px;
 }
 
-.place h4 {
+#result .place h4 {
   font-weight: 400;
   margin: 0;
 }
 
-.place p {
+#result .place p {
   margin-top: 0;
   color: #9d9d9d;
 }
 
-.total2 {
+#result .total2 {
   font-family: Open Sans;
   font-weight: 300;
   font-size: 1.25em;
@@ -180,11 +177,11 @@ span.active-bread {
   margin: 20px 0;
 }
 
-.total2 span {
+#result .total2 span {
   color: #505050;
 }
 
-.total2 span:last-child {
+#result .total2 span:last-child {
   text-align: right;
   font-size: 1.5em;
   color: black;
@@ -192,19 +189,19 @@ span.active-bread {
   font-weight: 400;
 }
 
-.total2 span b {
+#result .total2 span b {
   color: black;
   font-weight: 300;
   font-size: 1.5em;
 }
 
-.form-card .header {
+#result .form-card .header {
   align-self: flex-start;
   display: flex;
   justify-content: space-between;
 }
 
-.btn-group {
+#result .btn-group {
   margin-top: 30px;
   margin-bottom: 10px;
   display: flex;
@@ -213,13 +210,13 @@ span.active-bread {
   width: calc(min(90%, 600px));
 }
 
-.btn-group a {
+#result .btn-group a {
   display: flex;
   text-decoration: none;
   justify-content: center;
 }
 
-.btn-group a:first-child {
+#result .btn-group a:first-child {
   border: none;
   cursor: pointer;
   color: #6e6e6e;
@@ -231,11 +228,11 @@ span.active-bread {
   width: 100%;
 }
 
-.btn-group a:first-child:hover {
+#result .btn-group .accent:hover {
   color: black;
 }
 
-.btn-group a:last-child {
+#result .btn-group .accent {
   border: none;
   cursor: pointer;
   background-color: var(--cone, orangered);
@@ -249,82 +246,82 @@ span.active-bread {
   width: 100%;
 }
 
-.btn-group a:last-child:hover {
+#result .btn-group .accent:hover {
   background-color: hsl(19, 100%, 55%);
 }
 
-.pay-group {
+#result .pay-group {
   display: flex;
   justify-content: space-between;
 }
 
-.recepit {
+#result .recepit {
   padding: 20px;
 }
 
-.recepit,
-.payment-form {
+#result .recepit,
+#result .payment-form {
   width: 50%;
 }
 
-.payment-form {
+#result .payment-form {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.payment-form img {
+#result .payment-form img {
   width: 200px;
 }
 
 @media screen and (max-width: 710px) {
-  .global-form {
+  #result .global-form {
     flex-direction: column-reverse;
   }
 
-  .form-col1 {
+  #result .form-col1 {
     width: 100%;
   }
 }
 
 @media screen and (max-width: 650px) {
-  .pay-group {
+  #result .pay-group {
     flex-direction: column-reverse;
   }
 
-  .payment-form,
-  .recepit {
+  #result .payment-form,
+  #result .recepit {
     width: 100%;
   }
 
-  .recepit {
+  #result .recepit {
     margin-bottom: 0px;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .breadcrums {
+  #result .breadcrums {
     display: none;
   }
 }
 
 @media screen and (max-width: 500px) {
-  .btn-group {
+  #result .btn-group {
     flex-direction: column;
   }
 
-  .total2 {
+  #result .total2 {
     flex-direction: column;
     align-items: center;
   }
 
-  .total2 span:first-child {
+  #result .total2 span:first-child {
     margin-bottom: 20px;
   }
 }
 
 @media screen and (max-width: 375px) {
-  .breadcrums {
+  #result .breadcrums {
     display: none;
   }
 }

@@ -1,8 +1,5 @@
-body {
-  padding-top: 100px;
-}
-
 #passenger {
+  padding-top: 100px;
   padding-bottom: 100px;
   margin: 0 auto;
   width: calc(min(1050px, 90%));
@@ -65,7 +62,7 @@ body {
 }
 
 .form-card p::before {
-  content: "";
+  content: '';
   position: absolute;
   left: -20px;
   height: 100%;
@@ -167,6 +164,7 @@ span.active-bread {
 
 .time {
   margin-right: 10px;
+  margin-left: 10px;
 }
 
 .time > span:first-child {
@@ -189,8 +187,8 @@ span.active-bread {
 }
 
 .row1 .marker::before {
-  content: "";
-  height: 100%;
+  content: '';
+  height: 125%;
   position: absolute;
   top: 15px;
   left: 50%;
@@ -280,6 +278,10 @@ span.active-bread {
 .recepit {
   position: sticky;
   top: 20px;
+}
+
+.recepit p::before {
+  display: none;
 }
 
 .form-card .header {
@@ -387,7 +389,7 @@ p.sec-text {
 
 /* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
-  content: "";
+  content: '';
   position: absolute;
   display: none;
 }

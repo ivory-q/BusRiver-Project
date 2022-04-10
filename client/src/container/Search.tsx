@@ -4,6 +4,8 @@ import SearchResults from '../components/SearchResults';
 import { useSearchParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
+import { SearchResultsState } from '../types/SearchResult';
+
 export default function Search() {
   let [searchParams, setSearchParams] = useSearchParams();
   let [fromInput, fromInputSet] = useState('');
@@ -11,44 +13,105 @@ export default function Search() {
   let [dateInput, dateInputSet] = useState('');
   let [passInput, passInputSet] = useState<number | undefined>();
 
+  let [searchState, setSearchState] = useState<SearchResultsState>({
+    isLoaded: false,
+    items: [],
+    error: null,
+  });
+
   useEffect(() => {
-    fromInputSet(searchParams.get('from') || '');
-    toInputSet(searchParams.get('to') || '');
-    dateInputSet(searchParams.get('date') || '');
-    passInputSet(Number(searchParams.get('pass')) || undefined);
+    fromInput = searchParams.get('from') || '';
+    toInput = searchParams.get('to') || '';
+    dateInput = searchParams.get('date') || '';
+    passInput = Number(searchParams.get('pass')) || undefined;
+    fromInputSet(fromInput);
+    toInputSet(toInput);
+    dateInputSet(dateInput);
+    passInputSet(passInput);
+
+    fetch('/api/route/search', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        from: fromInput,
+        to: toInput,
+        date: dateInput,
+        pass: passInput,
+      }),
+    })
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          setSearchState({
+            isLoaded: true,
+            items: result,
+          });
+        },
+        (error) => {
+          setSearchState({
+            isLoaded: true,
+            error,
+          });
+        }
+        );
   }, []);
-
-//   useEffect(() => {
-//     fetch("/api")
-//       .then(res => res.json())
-//       .then(
-//         (result) => {
-//           this.setState({
-//             isLoaded: true,
-//             items: result.items
-//           });
-//         },
-//         // Note: it's important to handle errors here
-//         // instead of a catch() block so that we don't swallow
-//         // exceptions from actual bugs in components.
-//         (error) => {
-//           this.setState({
-//             isLoaded: true,
-//             error
-//           });
-//         }
-//       )
-//   }, []);
-
+  
   return (
-    <Banner>
-      <SearchForm
-        from={fromInput}
-        to={toInput}
-        date={dateInput}
-        pass={passInput}
-      />
-      {/* <SearchResults /> */}
-    </Banner>
+    <>
+      <Banner>
+        <SearchForm
+          from={fromInput}
+          to={toInput}
+          date={dateInput}
+          pass={passInput}
+          handlers={{
+            from: fromInputSet,
+            to: toInputSet,
+            date: dateInputSet,
+            pass: passInputSet,
+          }}
+        />
+      </Banner>
+      <section id="search">
+        <div className="search-cont">
+          <p className="search-hint">
+            Отправление и прибытие по местному времени
+          </p>
+          <h2 className="search-header">
+            Расписание автобусов Краснодар - Москва на 6 июня
+          </h2>
+          <div className="search-info">
+            <div className="info-header">
+              <span>Рейсы с пометкой</span>
+              <div className="info-bg">
+                <span>Можно не печатать</span>
+              </div>
+            </div>
+            <div className="info-text">
+              При посадке просто покажите билет с экрана вашего телефона,
+              распечатывать необязательно. Не забудьте взять с собой оригинал
+              документа, который использовали при оформлении
+            </div>
+          </div>
+          <div className="search-filters">
+            <div className="filter-card">Время отправления</div>
+            <div className="filter-card">Время в пути</div>
+            <div className="filter-card">Время прибытия</div>
+            <div className="filter-card active">
+              <span> Стоимость</span>{' '}
+              <img src="images/vector/icons/small_arr.svg" alt="" />
+            </div>
+            <div className="filter-card">Популярность</div>
+          </div>
+          <SearchResults
+            isLoaded={searchState.isLoaded}
+            items={searchState.items}
+            error={searchState.error}
+          />
+        </div>
+      </section>
+    </>
   );
 }

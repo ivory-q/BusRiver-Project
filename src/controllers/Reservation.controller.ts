@@ -24,6 +24,14 @@ export default class ReservationController {
   };
 
   /**
+   * seats
+   */
+  public seats = async (_req: Request, _res: Response) => {
+    const reservations = await this.ReservationService.seats(_req.body.routeId);
+    _res.json(reservations);
+  };
+
+  /**
    * create
    */
   public create = async (_req: Request, _res: Response) => {
@@ -62,7 +70,8 @@ export default class ReservationController {
    * routes
    */
   public routes() {
-    this.router.get('/get', this.index);
+    this.router.post('/get', this.index);
+    this.router.post('/seats', this.seats);
     this.router.post('/create', this.create);
     this.router.put('/update', this.update);
     this.router.delete('/delete', this.delete);

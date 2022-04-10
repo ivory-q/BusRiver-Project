@@ -19,7 +19,12 @@ export class Reservation extends BaseEntity {
   @Column()
   time: string;
 
-  @ManyToOne(() => Route, (route) => route.reservations)
+  @Column()
+  seat: number;
+
+  @ManyToOne(() => Route, (route) => route.reservations, {
+    onDelete: 'CASCADE', onUpdate:"CASCADE"
+  })
   @JoinColumn()
   route: Route | null;
 }

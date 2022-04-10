@@ -455,9 +455,11 @@
   #jumbo > img {
     left: 10%;
     width: 500px;
+    z-index: 1;
   }
 
   .search-inp {
+    z-index: 2;
     width: 250px;
   }
 
@@ -467,6 +469,7 @@
 
   .search-inp-group {
     flex-wrap: wrap;
+    margin-bottom: 25px;
   }
 
   .jumbo-search-form > form {
@@ -475,7 +478,7 @@
   }
 
   .jumbo-search-form > form input[type="submit"] {
-    margin-top: 25px;
+    z-index: 2;
     height: 60px;
   }
 

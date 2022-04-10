@@ -33,15 +33,12 @@ export class Route extends BaseEntity {
   @Column()
   price: number;
 
-  @Column({ nullable: true })
-  popularity: number;
-
   @OneToMany(() => Reservation, (reservation) => reservation.route, {
-    cascade: true,
+    onDelete: 'CASCADE', onUpdate:"CASCADE"
   })
   reservations: Reservation[];
 
-  @ManyToMany(() => Car, { cascade: true })
+  @ManyToMany(() => Car)
   @JoinTable()
   cars: Car[];
 }

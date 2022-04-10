@@ -26,13 +26,13 @@ export default class CarController {
    * create
    */
   public create = async (_req: Request, _res: Response) => {
-    const car = _req.body as Car;
+    const car = _req.body.car as Car;
     const newCar = await this.CarService.create(car);
     _res.send(newCar);
   };
 
   /**
-   * update
+   * update 
    */
   public update = async (_req: Request, _res: Response) => {
     const newCar = _req.body as Car;

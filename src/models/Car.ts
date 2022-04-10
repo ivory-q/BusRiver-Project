@@ -1,4 +1,10 @@
-import { BaseEntity, Column, Entity, ManyToMany, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  BaseEntity,
+  Column,
+  Entity,
+  ManyToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import { Route } from './Route';
 
 @Entity()
@@ -12,6 +18,6 @@ export class Car extends BaseEntity {
   @Column()
   seats: number;
 
-  @ManyToMany(() => Route, route => route.cars)
+  @ManyToMany(() => Route, (route) => route.cars, { cascade: true })
   car: Car[];
 }

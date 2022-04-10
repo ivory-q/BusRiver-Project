@@ -1,19 +1,16 @@
-body {
-  padding-top: 100px;
-}
-
 #seat {
+  padding-top: 100px;
+  min-height: 98vh;
   margin: 0 auto;
   width: calc(min(1250px, 90%));
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
 .breadcrums {
   align-self: flex-start;
-  margin-left: 40px;
   display: inline-block;
   padding: 12px 24px;
   background-color: white;
@@ -101,7 +98,7 @@ span.active-bread {
   font-weight: 300;
 }
 
-.bus {
+.bus-frame {
   margin: 50px 0;
   padding: 10px;
   padding-left: 50px;
@@ -163,7 +160,7 @@ span.active-bread {
   border: 2px solid #56a349;
 }
 
-#seat input {
+#seat input[type="submit"] {
   margin-bottom: 100px;
   cursor: pointer;
   font-family: Open Sans;
@@ -177,12 +174,24 @@ span.active-bread {
   background-color: var(--cone, orangered);
 }
 
-#seat input:hover {
+#seat input[type="submit"]:hover {
   background-color: hsl(19, 100%, 55%);
 }
 
+.activeseat {
+  box-shadow: 0 0 6px var(--cone, orangered);
+  border: 2px solid var(--cone, orangered);
+}
+
+@media screen and (max-width: 1300px) {
+  .col1,
+  .col2 {
+    width: auto;
+  }
+}
+
 @media screen and (max-width: 900px) {
-  .bus {
+  .bus-frame {
     margin: 350px 0;
     transform: rotate(-90deg);
   }

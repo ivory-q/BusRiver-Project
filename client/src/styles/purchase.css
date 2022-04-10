@@ -1,8 +1,5 @@
-body {
+#payment {
   padding-top: 100px;
-}
-
-#passenger {
   padding-bottom: 100px;
   margin: 0 auto;
   width: calc(min(1050px, 90%));
@@ -12,16 +9,21 @@ body {
   align-items: center;
 }
 
-.breadcrums {
+#payment .form-card p:before {
+  display: none;
+}
+
+#payment .breadcrums {
   align-self: flex-start;
   display: inline-block;
   padding: 12px 24px;
   background-color: white;
   border-radius: 5px;
   margin-bottom: 40px;
+  margin-left: 40px;
 }
 
-.breadcrums span {
+#payment .breadcrums span {
   cursor: pointer;
   font-family: Open Sans;
   margin: 0 5px;
@@ -29,17 +31,17 @@ body {
   font-weight: 300;
 }
 
-.breadcrums span:hover {
+#payment .breadcrums span:hover {
   color: #525252;
 }
 
-.global-form {
+#payment .global-form {
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
 
-.form-card {
+#payment .form-card {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,14 +53,14 @@ body {
   border-radius: 8px;
 }
 
-.form-card h2 {
+#payment .form-card h2 {
   margin: 0;
   font-family: Lora;
   font-size: 2em;
   font-weight: 400;
 }
 
-.form-card p {
+#payment .form-card p {
   position: relative;
   font-family: Open Sans;
   font-weight: 300;
@@ -67,33 +69,33 @@ body {
   margin-bottom: 30px;
 }
 
-.form-col1 {
+#payment .form-col1 {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
 }
 
-span.active-bread {
+#payment span.active-bread {
   color: black;
   font-weight: 400;
 }
 
-.d-group {
+#payment .d-group {
   justify-content: space-between;
   display: flex;
   flex-direction: column;
   margin-bottom: 16px;
 }
 
-.inp-group {
+#payment .inp-group {
   margin-bottom: 16px;
   width: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.inp-group > label {
+#payment .inp-group > label {
   font-family: Open Sans;
   font-weight: 300;
   color: #505050;
@@ -101,7 +103,7 @@ span.active-bread {
   margin-bottom: 5px;
 }
 
-.inp-group > :is(input, select) {
+#payment .inp-group > :is(input, select) {
   font-family: Open Sans;
   font-size: 1em;
   font-weight: 300;
@@ -111,47 +113,47 @@ span.active-bread {
   outline: none;
 }
 
-.inp-group > :is(input, select):focus {
+#payment .inp-group > :is(input, select):focus {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
 }
 
-.divider {
+#payment .divider {
   width: 95%;
   height: 1px;
   background-color: #d4d4d4;
   margin: 20px 0;
 }
 
-.row1,
-.row2 {
+#payment .row1,
+#payment .row2 {
   display: flex;
 }
 
-.time {
+#payment .time {
   margin-right: 10px;
 }
 
-.time > span:first-child {
+#payment .time > span:first-child {
   font-family: Lora;
   font-size: 1.25em;
   font-weight: 400;
 }
 
-.time > span:last-child {
+#payment .time > span:last-child {
   font-family: Open Sans;
   color: #9d9d9d;
   font-size: 0.85em;
   font-weight: 300;
 }
 
-.marker {
+#payment .marker {
   background-color: white;
   position: relative;
   margin-top: 4px;
 }
 
-.row1 .marker::before {
-  content: "";
+#payment .row1 .marker::before {
+  content: '';
   height: 100%;
   position: absolute;
   top: 15px;
@@ -160,30 +162,30 @@ span.active-bread {
   border: 1px dashed #cfcfcf;
 }
 
-.marker > div {
+#payment .marker > div {
   height: 15px;
   width: 15px;
   border-radius: 100%;
   border: 2px solid var(--cone, oreangered);
 }
 
-.place {
+#payment .place {
   font-family: Open Sans;
   font-weight: 300;
   margin-left: 15px;
 }
 
-.place h4 {
+#payment .place h4 {
   font-weight: 400;
   margin: 0;
 }
 
-.place p {
+#payment .place p {
   margin-top: 0;
   color: #9d9d9d;
 }
 
-.total2 {
+#payment .total2 {
   font-family: Open Sans;
   font-weight: 300;
   font-size: 1.25em;
@@ -194,11 +196,11 @@ span.active-bread {
   margin: 20px 0;
 }
 
-.total2 span {
+#payment .total2 span {
   color: #505050;
 }
 
-.total2 span:last-child {
+#payment .total2 span:last-child {
   text-align: right;
   font-size: 1.5em;
   color: black;
@@ -206,32 +208,32 @@ span.active-bread {
   font-weight: 400;
 }
 
-.total2 span b {
+#payment .total2 span b {
   color: black;
   font-weight: 300;
   font-size: 1.5em;
 }
 
-.form-card .header {
+#payment .form-card .header {
   align-self: flex-start;
   display: flex;
   justify-content: space-between;
 }
 
-.security {
+#payment .security {
   display: flex;
   align-items: flex-start;
 }
 
-.payment-icons {
+#payment .payment-icons {
   display: flex;
 }
 
-.payment-icons img {
+#payment .payment-icons img {
   margin-right: 15px;
 }
 
-.btn-group {
+#payment .btn-group {
   margin-bottom: 10px;
   display: flex;
   flex-direction: column;
@@ -239,36 +241,39 @@ span.active-bread {
   width: calc(min(90%, 300px));
 }
 
-.btn-group input {
+#payment .btn-group input {
+  height: 100%;
+}
+
+#payment .btn-group a {
   border: none;
   cursor: pointer;
   background-color: var(--cone, orangered);
   border-radius: 6px;
   color: white;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
   font-size: 1.1em;
   font-weight: 300;
   font-family: Open Sans;
-  padding: 16px 0;
   width: 100%;
 }
 
-.btn-group input:hover {
+#payment .btn-group input:hover {
   background-color: hsl(19, 100%, 55%);
 }
 
-.btn-group span {
+#payment .btn-group span {
   font-family: Lora;
   font-size: 2.25em;
   margin: 10px 0;
 }
 
-.sec-sub-info {
+#payment .sec-sub-info {
   justify-content: center;
   display: flex;
 }
 
-.sec-sub-info p {
+#payment .sec-sub-info p {
   margin: 0;
   margin-left: 10px;
   font-size: 0.9em;
@@ -277,82 +282,82 @@ span.active-bread {
   font-family: Open Sans;
 }
 
-.sec-sub-info img {
+#payment .sec-sub-info img {
   width: 20px;
 }
 
-.pay-group {
+#payment .pay-group {
   display: flex;
   justify-content: space-between;
 }
 
-.recepit,
-.payment-form {
+#payment .recepit,
+#payment .payment-form {
   width: 46%;
 }
 
 @media screen and (max-width: 710px) {
-  .global-form {
+  #payment .global-form {
     flex-direction: column-reverse;
   }
 
-  .form-col1 {
+  #payment .form-col1 {
     width: 100%;
   }
 }
 
 @media screen and (max-width: 650px) {
-  .pay-group {
+  #payment .pay-group {
     flex-direction: column-reverse;
   }
 
-  .payment-form,
-  .recepit {
+  #payment .payment-form,
+  #payment .recepit {
     width: 100%;
   }
 
-  .recepit {
+  #payment .recepit {
     margin-bottom: 40px;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .breadcrums {
+  #payment .breadcrums {
     display: none;
   }
 }
 
 @media screen and (max-width: 460px) {
-  .total2 {
+  #payment .total2 {
     flex-direction: column;
     align-items: center;
   }
 
-  .total2 span:first-child {
+  #payment .total2 span:first-child {
     margin-bottom: 20px;
   }
 }
 
 @media screen and (max-width: 375px) {
-  .breadcrums {
+  #payment .breadcrums {
     display: none;
   }
 
-  .d-group {
+  #payment .d-group {
     margin-bottom: 0;
     flex-direction: column;
   }
 
-  .inp-group {
+  #payment .inp-group {
     margin-bottom: 16px;
     width: 100%;
   }
 
-  .security {
+  #payment .security {
     flex-direction: column;
   }
 
-  .form-card .header h2:last-child {
+  #payment .form-card .header h2:last-child {
     text-align: right;
   }
 }

@@ -35,6 +35,8 @@
   "dependencies": {
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
+    "mobx": "^6.5.0",
+    "mobx-react-lite": "^3.3.0",
     "morgan": "^1.10.0",
     "mysql": "^2.18.1",
     "typeorm": "^0.3.3"

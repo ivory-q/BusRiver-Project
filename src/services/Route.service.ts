@@ -1,4 +1,4 @@
-import { In } from 'typeorm';
+import { Like, In } from 'typeorm';
 import { Car } from '../models/Car';
 import { Route } from '../models/Route';
 
@@ -15,6 +15,39 @@ export class RouteService {
     } else {
       routes = await Route.find({ relations: { cars: true } });
     }
+    return routes;
+  };
+
+  public options = async () => {
+    let routes = await Route.find({ select: { from: true, to: true } });
+    let from: Set<string> = new Set();
+    let to: Set<string> = new Set();
+
+    routes.forEach((route) => {
+      from.add(route.from);
+      to.add(route.to);
+    });
+
+    return [Array.from(from.values()), Array.from(to.values())];
+  };
+
+  public search = async (routeSearch: {
+    from: string;
+    to: string;
+    date: string;
+    pass: number;
+  }) => {
+    const routes = await Route.find({
+      where: [
+        {
+          from: Like(`${routeSearch.from}%`),
+          to: Like(`${routeSearch.to}%`),
+          date: Like(`${routeSearch.date}%`),
+        },
+      ],
+      relations: { cars: true },
+    });
+
     return routes;
   };
 
