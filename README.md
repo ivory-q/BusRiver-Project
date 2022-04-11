@@ -12,8 +12,8 @@ Application tech stack:
 -   Node
 -   Express
 -   Typescript
--   Nunjucks
+-   MobX
 -   React
 -   Jest
 -   TypeORM
--   PostgreSQL
+-   MySQL
