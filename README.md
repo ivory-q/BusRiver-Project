@@ -6,7 +6,7 @@ Allows managing site content from admin panel.
 
 ## Tech and Metods
 
-This application has been developed following TDD and MVC metodologies.
+This application has been developed MVC metodology.
 
 Application tech stack:
 -   Node
